@@ -4,6 +4,8 @@
 #include "Pickup.h"
 #include "Components/BoxComponent.h"
 #include "ComponentVisualizer.h"
+#include "PlayableCharacter.h"
+#include "Kismet/GameplayStatics.h"
 
 // Sets default values
 APickup::APickup()
@@ -43,8 +45,13 @@ void APickup::Tick(float DeltaTime)
 
 void APickup::OnPlayerEnterPickupBox(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherCommp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult)
 {
+	// Destroy the pickup
 	Destroy();
-	n_pickup += 1;
-	printf("Toilet paper rolls picked up: %d\n", n_pickup);
+	// Get the player character
+	APlayableCharacter* PlayableCharacter = Cast<APlayableCharacter>(UGameplayStatics::GetPlayerPawn(GetWorld(), 0));
+
+	if (PlayableCharacter) {
+		PlayableCharacter->PickUpItem();
+	}
 }
 

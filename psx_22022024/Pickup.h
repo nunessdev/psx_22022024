@@ -38,6 +38,4 @@ public:
 	UFUNCTION()
 	void OnPlayerEnterPickupBox(UPrimitiveComponent* OverlappedComp, AActor* OtherActor, UPrimitiveComponent* OtherCommp, int32 OtherBodyIndex, bool bFromSweep, const FHitResult& SweepResult);
 
-	// Variable that keeps track of pickups collected
-	int n_pickup = 0;
 };

@@ -51,6 +51,15 @@ void APlayableCharacter::SetupPlayerInputComponent(UInputComponent* PlayerInputC
 
 }
 
+void APlayableCharacter::PickUpItem()
+{
+	// Increment number of items picked up
+	numItemsPickedUp++;
+	
+	// Register to log current value 
+	UE_LOG(LogTemp, Warning, TEXT("Number of toilet papers picked up: %d\n"), numItemsPickedUp);
+}
+
 void APlayableCharacter::MoveForward(float InputValue)
 {
 	// Forward facing direction

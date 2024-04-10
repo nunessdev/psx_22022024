@@ -26,6 +26,18 @@ public:
 	// Called to bind functionality to input
 	virtual void SetupPlayerInputComponent(class UInputComponent* PlayerInputComponent) override;
 
+	// Variable to keep track of number of picked up objects
+	int32 numItemsPickedUp = 0;
+
+	// Function to increment the value of numItemsPickedUp
+	UFUNCTION(BlueprintCallable)
+	void PickUpItem();
+
+	// Getter function to get current numItemsPickedUp value
+	UFUNCTION(Blueprintcallable, Category = "Pickup")
+	int32 GetNumItemsPickedUp() const { return numItemsPickedUp; }
+
+
 protected:
 
 	UPROPERTY(EditAnywhere)
