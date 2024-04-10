@@ -1,2 +1,2 @@
 # PSX HORROR PROTOTYPE
-An Unreal Engine 5 project made with the objective of learning the engine
+Source code of an Unreal Engine game I'm developing with the objective of learning the engine
